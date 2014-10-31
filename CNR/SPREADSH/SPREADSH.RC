@@ -1,0 +1,20 @@
+/************************************************************
+/ Container Control - Spreadsheet Behavior
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "spreadsh.h"
+/*****************************/
+/* Accelerators              */
+/*****************************/
+ACCELTABLE SPD_ACCELERATOR
+BEGIN
+   VK_TAB,     SPD_TAB,       VIRTUALKEY
+   VK_BACKTAB, SPD_BACKTAB,   VIRTUALKEY, SHIFT
+   VK_UP,      SPD_UP,        VIRTUALKEY
+   VK_DOWN,    SPD_DOWN,      VIRTUALKEY
+END
+
+

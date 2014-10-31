@@ -1,0 +1,33 @@
+
+IFrameWindow frame
+  IMultiCellCanvas clientCanvas
+    IStaticText headingText
+    IStaticText topSeparator
+    IMultiCellCanvas level1
+      ISplitCanvas horizSplit
+        ISplitCanvas vertSplit
+          IBitmapControl sizedBmp1
+          IBitmapControl sizedBmp2
+        IViewPort bmpScroller
+          IBitmapControl actualSizeBmp
+      IStaticText centerSeparator
+      IViewPort dlgScroller
+        IMultiCellCanvas level2
+          IStaticText prompt
+          IEntryField entry
+          ICheckBox choice1
+          ICheckBox choice2
+          IStaticText listHeading
+          IListBox list
+          IStaticText rightSeparator
+    ISetCanvas colorButtons
+      IGraphicPushButton red
+      IGraphicPushButton green
+      IGraphicPushButton blue
+      IGraphicPushButton cyan
+      IGraphicPushButton pink
+    ISetCanvas pushButtons
+      IPushButton ok
+      IPushButton cancel
+      IPushButton help
+

@@ -1,0 +1,16 @@
+## Getting Started - Simple Example: Version 1
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : start1.exe 
+
+start1.exe : start1.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) start1.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+

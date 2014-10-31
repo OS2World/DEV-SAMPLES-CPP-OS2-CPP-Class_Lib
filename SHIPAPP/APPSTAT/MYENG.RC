@@ -1,0 +1,9 @@
+#include <os2.h>
+#include "mytext.h"
+
+STRINGTABLE PRELOAD
+BEGIN
+ MY_TEXT,     "Using resources is easy"
+END
+
+

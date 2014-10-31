@@ -1,0 +1,17 @@
+/************************************************************
+/ Advanced Frame - Profile Viewer Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "profview.h"
+
+ICON INI_ICON_ID "ini.ico"
+ICON APP_ICON_ID "app.ico"
+ICON KEY_ICON_ID "key.ico"
+
+ASSOCTABLE 100
+  BEGIN
+    "OS/2 Profile", "*.INI", "ini.ico"
+  END
+

@@ -1,0 +1,14 @@
+## Canvas  - Nested Canvas Tabbing Example            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : cvtab.exe 
+
+cvtab.exe : cvtab.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) cvtab.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

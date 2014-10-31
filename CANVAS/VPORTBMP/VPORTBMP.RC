@@ -1,0 +1,48 @@
+/************************************************************
+/ Canvas - IViewPort that Scrolls a Bitmap.
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <icconst.h>    // for IC_DEFAULT_FRAME_ID
+#include "vportbmp.h"
+
+//========================= Bit maps ==========================
+BITMAP  ID_FLAMINGO     .\..\..\resource\flamingo.bmp
+BITMAP  ID_BUTTERFLIES  .\..\..\resource\butterfl.bmp
+BITMAP  ID_SHELLS       .\..\..\resource\shells.bmp
+BITMAP  ID_ORCHIDS      .\..\..\resource\orchids.bmp
+BITMAP  ID_OS2LOGO      .\..\..\resource\os2logo.bmp
+
+//======================== Menu bar ===========================
+MENU IC_DEFAULT_FRAME_ID
+{
+  SUBMENU "~Bit map",             ID_BITMAP
+  {
+    MENUITEM "~Double size",      ID_DOUBLE_SIZE
+    MENUITEM "~Halve size",       ID_HALVE_SIZE
+    MENUITEM SEPARATOR
+    MENUITEM "~Flamingo",         ID_FLAMINGO
+    MENUITEM "~Butterflies",      ID_BUTTERFLIES
+    MENUITEM "~Shells",           ID_SHELLS
+    MENUITEM "~Orchids",          ID_ORCHIDS
+    MENUITEM "OS/~2 logo",        ID_OS2LOGO
+  }
+  SUBMENU "~View port",           ID_VIEWPORT
+  {
+    MENUITEM "Scroll to ~top",    ID_SCROLL_TO_TOP
+    MENUITEM "Scroll to ~center", ID_SCROLL_TO_VERT_MIDDLE
+    MENUITEM "Scroll to ~bottom", ID_SCROLL_TO_BOTTOM
+    MENUITEM SEPARATOR
+    MENUITEM "Scroll to ~left",   ID_SCROLL_TO_LEFT
+    MENUITEM "Scroll to ce~nter", ID_SCROLL_TO_MIDDLE
+    MENUITEM "Scroll to ~right",  ID_SCROLL_TO_RIGHT
+  }
+}
+
+//========================= Strings ===========================
+STRINGTABLE PRELOAD
+{
+  IC_DEFAULT_FRAME_ID,  "OS/2 bit maps"
+}
+

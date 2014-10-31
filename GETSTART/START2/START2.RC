@@ -1,0 +1,19 @@
+#define INCL_WINFRAMEMGR     // For SC_CLOSE.
+#define INCL_WINMENUS        // For MIS_SYSCOMMAND.
+#include <os2.h>
+#include "start2.h"
+
+MENU ID_MENUBAR
+  BEGIN
+    SUBMENU "~File",         ID_FILE
+      BEGIN
+        MENUITEM "Close",    SC_CLOSE, MIS_SYSCOMMAND
+      END
+    SUBMENU "~Edit",         ID_EDIT
+      BEGIN
+        MENUITEM "Cu~t",     CMD_CUT
+        MENUITEM "~Copy",    CMD_COPY
+        MENUITEM "~Paste",   CMD_PASTE
+      END
+  END
+

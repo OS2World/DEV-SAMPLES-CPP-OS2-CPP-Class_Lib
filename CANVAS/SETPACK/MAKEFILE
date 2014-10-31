@@ -1,0 +1,24 @@
+## Container Control - Tree Icon View                 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : setpack.exe 
+
+setpack.exe : setpack.obj packcv.obj packcv.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) setpack.obj packcv.obj
+   rc packcv.res .\$*.exe
+
+setpack.cpp: packcv.hpp packcv.h
+packcv.cpp: packcv.hpp packcv.h
+packcv.rc: tl.ico tc.ico tr.ico \
+         cl.ico cc.ico cr.ico \
+         bl.ico bc.ico br.ico packcv.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

@@ -1,0 +1,10 @@
+/************************************************************
+/ Lunch dialog - Dialog template implementation.             
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "lunch.h"
+rcinclude "lunch.dlg"
+

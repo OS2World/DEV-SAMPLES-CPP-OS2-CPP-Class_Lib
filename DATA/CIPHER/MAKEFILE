@@ -1,0 +1,14 @@
+## Data Types - Using an IString as a Data Buffer 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : cipher.exe 
+
+cipher.exe : cipher.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) cipher.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

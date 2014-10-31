@@ -1,0 +1,14 @@
+## Canvas - ISplitCanvas with "problem" Child Windows  
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : splitprb.exe 
+
+splitprb.exe : splitprb.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) splitprb.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

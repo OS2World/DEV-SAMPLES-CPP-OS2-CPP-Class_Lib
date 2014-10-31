@@ -1,0 +1,14 @@
+## Notebook Control - Default Notebook            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : default.exe 
+
+default.exe : default.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) default.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

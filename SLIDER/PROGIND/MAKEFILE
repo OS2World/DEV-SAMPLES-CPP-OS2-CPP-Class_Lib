@@ -1,0 +1,17 @@
+## Slider - Progress Indicator Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : progind.exe 
+
+progind.exe : progind.obj taskview.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) progind.obj taskview.obj
+
+progind.cpp:   taskview.hpp
+taskview.cpp: taskview.hpp taskview.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

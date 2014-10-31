@@ -1,0 +1,22 @@
+## Canvas - Complex Canvas Example 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ 
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : xcanvas.res complex.exe 
+
+complex.exe : complex.obj xcanvas.obj xcanvas.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) complex.obj xcanvas.obj
+   rc xcanvas.res .\$*.exe
+
+complex.cpp: xcanvas.hpp xcanvas.h pushbtns.hpp
+xcanvas.cpp: xcanvas.hpp xcanvas.h 
+xcanvas.rc:  xcanvas.h xcanvas.h screen.ico 
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

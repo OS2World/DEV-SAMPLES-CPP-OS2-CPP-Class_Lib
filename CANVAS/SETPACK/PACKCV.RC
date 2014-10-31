@@ -1,0 +1,18 @@
+/************************************************************
+/ Canvas - ISetCanvas Desks Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "packcv.h"
+
+ICON    ID_TOP_LEFT       TL.ICO
+ICON    ID_TOP_CENTER     TC.ICO
+ICON    ID_TOP_RIGHT      TR.ICO
+ICON    ID_CENTER_LEFT    CL.ICO
+ICON    ID_CENTER_CENTER  CC.ICO
+ICON    ID_CENTER_RIGHT   CR.ICO
+ICON    ID_BOTTOM_LEFT    BL.ICO
+ICON    ID_BOTTOM_CENTER  BC.ICO
+ICON    ID_BOTTOM_RIGHT   BR.ICO
+

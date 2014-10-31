@@ -1,0 +1,90 @@
+/************************************************************
+/ Canvas - ISetCanvas decks example.
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "setdecks.h"
+
+/*====================== Accelerators ========================*/
+ACCELTABLE ID_DECKS_FRAME
+BEGIN
+  VK_F3, SC_CLOSE, VIRTUALKEY, SYSCOMMAND
+END
+
+/*======================== Menu bar ==========================*/
+MENU ID_DECKS_FRAME
+{
+  SUBMENU "~File",                ID_FILE
+  {
+    MENUITEM "Close\tF3",         SC_CLOSE,  MIS_SYSCOMMAND
+  }
+  SUBMENU "~Decks",               ID_DECKS
+  {
+    SUBMENU  "~Orientation",      ID_DECK_DIR
+    {
+      MENUITEM "~Horizontal",     ID_DECK_HORZ
+      MENUITEM "~Vertical",       ID_DECK_VERT
+    }
+    SUBMENU  "~Count",            ID_DECK_COUNT
+    {
+      MENUITEM "~1",              ID_DECK_COUNT_1
+      MENUITEM "~2",              ID_DECK_COUNT_2
+      MENUITEM "~3",              ID_DECK_COUNT_3
+      MENUITEM "~4",              ID_DECK_COUNT_4
+      MENUITEM "~5",              ID_DECK_COUNT_5
+      MENUITEM "~6",              ID_DECK_COUNT_6
+      MENUITEM "~7",              ID_DECK_COUNT_7
+      MENUITEM "~8",              ID_DECK_COUNT_8
+      MENUITEM "~9",              ID_DECK_COUNT_9
+    }
+  }
+  SUBMENU "~White space",         ID_WHITESPACE
+  {
+    SUBMENU  "~Margin",           ID_MARGIN
+    {
+      MENUITEM "(~1, 1)",         ID_MARGIN_11
+      MENUITEM "(~8, 8)",         ID_MARGIN_88
+      SUBMENU  "~X",              ID_MARGIN_X
+      {
+        MENUITEM " X~*2",         ID_MARGIN_XX2
+        MENUITEM " X~/2",         ID_MARGIN_XD2
+      }
+      SUBMENU  "~Y",              ID_MARGIN_Y
+      {
+        MENUITEM "Y~*2",          ID_MARGIN_YX2
+        MENUITEM "Y~/2",          ID_MARGIN_YD2
+      }
+    }
+    SUBMENU  "~Pad",              ID_PAD
+    {
+      MENUITEM "(~1, 1)",         ID_PAD_11
+      MENUITEM "(~8, 8)",         ID_PAD_88
+      SUBMENU  "~X",              ID_PAD_X
+      {
+        MENUITEM "X~*2",          ID_PAD_XX2
+        MENUITEM "X~/2",          ID_PAD_XD2
+      }
+      SUBMENU  "~Y",              ID_PAD_Y
+      {
+        MENUITEM "Y~*2",          ID_PAD_YX2
+        MENUITEM "Y~/2",          ID_PAD_YD2
+      }
+    }
+  }
+  SUBMENU "~Child windows",       ID_CHILDREN
+  {
+    MENUITEM "Add as first",      ID_ADD_FIRST
+    MENUITEM "Add as last",       ID_ADD_LAST
+    MENUITEM SEPARATOR
+    MENUITEM "Remove first",      ID_DELETE_FIRST
+    MENUITEM "Remove last",       ID_DELETE_LAST
+  }
+}
+
+/*========================= Strings ==========================*/
+STRINGTABLE PRELOAD
+BEGIN
+  ID_DECKS_FRAME,                 "Set Canvas Decks"
+END
+

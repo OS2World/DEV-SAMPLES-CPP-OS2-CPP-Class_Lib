@@ -1,0 +1,18 @@
+/************************************************************
+/ Error Reporting - Exception Viewer Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "exviewer.h"
+
+STRINGTABLE
+  BEGIN
+    WND_MAIN,   "Exception Handling Example"    //Title bar text
+  END
+
+MENU WND_MAIN                           //Main Window Menu 
+  BEGIN
+    MENUITEM "~Throw Exception",   THROW_EXCEPTION
+  END
+

@@ -1,0 +1,12 @@
+DLGINCLUDE 1 "controls.h"
+
+DLGTEMPLATE ID_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Control Constructor and Color Sample", ID_DIALOG, 12, 6, 250, 
+            122, , FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        COMBOBOX        "", ID_COMBOBOX, 10, 59, 230, 54, WS_GROUP
+        LISTBOX         ID_LISTBOX, 10, 6, 230, 49, LS_NOADJUSTPOS | 
+                        LS_HORZSCROLL | WS_GROUP
+    END
+END

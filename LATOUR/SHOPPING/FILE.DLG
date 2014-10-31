@@ -1,0 +1,41 @@
+/************************************************************
+/ Tour of the UICL - Shopping List Example Program
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+
+DLGTEMPLATE ID_FILEDIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  DIALOG "Open", ID_FILEDIALOG, 1, 1, 278, 106, FS_NOBYTEALIGN |
+                 WS_CLIPSIBLINGS | WS_SAVEBITS | NOT FS_DLGBORDER
+  BEGIN
+    LTEXT      "Open filename:", DID_FILENAME_TXT, 5, 97, 100, 8
+    ENTRYFIELD "", DID_FILENAME_ED, 5, 87, 265, 8,
+               ES_AUTOSCROLL | ES_MARGIN | ES_READONLY |
+               WS_VISIBLE
+
+    LTEXT      "Type of file:", DID_FILTER_TXT, 5, 75, 88, 8
+    COMBOBOX   "", DID_FILTER_CB, 4, 22, 160, 53,
+               CBS_DROPDOWNLIST | NOT CBS_SIMPLE
+
+    LTEXT      "Drive:", DID_DRIVE_TXT, 167, 75, 50, 8
+    COMBOBOX   "", DID_DRIVE_CB, 166, 22, 107, 53,
+               CBS_DROPDOWNLIST | NOT CBS_SIMPLE
+
+    LTEXT      "File:", DID_FILES_TXT, 5, 53, 32, 8
+    CONTROL    "", DID_FILES_LB, 4, 4, 132, 51, WC_LISTBOX,
+               LS_HORZSCROLL | WS_TABSTOP | WS_VISIBLE
+
+    LTEXT      "Directory:", DID_DIRECTORY_TXT, 142, 53, 51, 8
+    CONTROL    "", DID_DIRECTORY_LB, 141, 4, 132, 51,
+               WC_LISTBOX, LS_HORZSCROLL | WS_TABSTOP |
+               WS_VISIBLE
+
+    PUSHBUTTON "", DID_OK_PB, 0, 0, 0, 0, WS_GROUP |
+               NOT WS_TABSTOP | NOT WS_VISIBLE
+    PUSHBUTTON "", DID_CANCEL_PB, 0, 0, 0, 0, WS_GROUP |
+               NOT WS_TABSTOP | NOT WS_VISIBLE
+  END
+END
+

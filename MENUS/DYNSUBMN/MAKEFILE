@@ -1,0 +1,21 @@
+## Menus  - Defining a Menu Resource                  
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : dynsubmn.exe 
+
+dynsubmn.exe : dynsubmn.obj dynsubmn.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) dynsubmn.obj
+   rc .\$*.res .\$*.exe
+
+dynsubmn.cpp : dynsubmn.h
+dynsubmn.rc  : dynsubmn.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

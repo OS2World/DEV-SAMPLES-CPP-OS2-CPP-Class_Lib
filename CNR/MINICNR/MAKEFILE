@@ -1,0 +1,22 @@
+## Container Control - Mini-icon Container            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : minicnr.exe 
+
+minicnr.exe : minicnr.obj cnrmini.obj minicnr.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) minicnr.obj cnrmini.obj
+   rc .\$*.res .\$*.exe
+
+minicnr.rc   : minicnr.h
+minicnr.cpp  : minicnr.h  cnrmini.hpp
+cnrmini.cpp  : minicnr.h  cnrmini.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

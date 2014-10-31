@@ -1,0 +1,10 @@
+/************************************************************
+/ Reusable Handlers - Keyboard Handler
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "keybd.h"
+rcinclude "keybd.dlg"
+

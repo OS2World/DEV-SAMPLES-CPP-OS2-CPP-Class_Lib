@@ -1,0 +1,17 @@
+## Slider - Slider Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : slider.exe 
+
+slider.exe : slider.obj tempview.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) slider.obj tempview.obj
+
+slider.cpp:   tempview.hpp
+tempview.cpp: tempview.hpp tempview.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

@@ -1,0 +1,21 @@
+## Menus  - Using an Accelerator Table Resource       
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : accel.exe 
+
+accel.exe : accel.obj accel.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) accel.obj
+   rc .\$*.res .\$*.exe
+
+accel.cpp : accel.h
+accel.rc  : accel.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

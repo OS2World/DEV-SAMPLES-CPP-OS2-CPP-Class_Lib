@@ -1,0 +1,23 @@
+## Tour of the UICL - Shopping List Example Program    
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ 
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL :  shopping.exe 
+
+shopping.exe : shopping.obj puritem.obj puritemv.obj shopping.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) shopping.obj puritem.obj puritemv.obj
+   rc shopping.res .\$*.exe
+
+shopping.cpp : puritem.hpp shopping.h
+puritem.cpp  : puritem.hpp puritemv.hpp shopping.h
+puritemv.cpp : puritem.hpp puritemv.hpp shopping.h 
+shopping.rc  : shopping.h file.dlg
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

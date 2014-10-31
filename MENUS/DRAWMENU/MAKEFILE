@@ -1,0 +1,21 @@
+## Menus - Custom Drawing Example  
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : drawmenu.exe 
+
+drawmenu.exe : drawmenu.obj drawmenu.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) drawmenu.obj
+   rc .\$*.res .\$*.exe
+
+drawmenu.cpp : drawmenu.h
+drawmenu.rc  : drawmenu.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

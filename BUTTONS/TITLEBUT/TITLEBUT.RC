@@ -1,0 +1,13 @@
+/************************************************************
+/ Button Controls - Title Bar Bitmap Example                 
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "titlebut.h"
+
+BITMAP ID_RINGBEFORE .\..\..\resource\leftring.bmp
+BITMAP ID_RINGAFTER  .\..\..\resource\rghtring.bmp
+
+

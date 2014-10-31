@@ -1,0 +1,50 @@
+/************************************************************
+/ Lunch dialog - Dialog template implementation.             
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+DLGINCLUDE 1 "lunch.h"
+
+DLGTEMPLATE ID_LUNCH_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Lunch", ID_LUNCH_DIALOG, 8, 5, 217, 166, ,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Select your lunch preferences:",
+                        ID_LUNCH_TEXT,
+                        4, 151, 186, 8, NOT WS_GROUP
+        GROUPBOX        "Food", ID_FOOD, 11, 71, 93, 74,
+                        NOT WS_GROUP
+        AUTORADIOBUTTON "Hamburger", ID_HAMBURGER,
+                        18, 123, 72, 10, WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Cheeseburger", ID_CHEESEBURGER,
+                        18, 107, 72, 10
+        AUTORADIOBUTTON "Hot dog", ID_HOTDOG, 18, 91, 72, 10
+        AUTORADIOBUTTON "Pizza", ID_PIZZA, 18, 75, 72, 10
+        GROUPBOX        "Beverage", ID_BEVERAGE,
+                        114, 71, 93, 74, NOT WS_GROUP
+        AUTORADIOBUTTON "Milk", ID_MILK, 121, 123, 79, 10,
+                        WS_GROUP | WS_TABSTOP
+        AUTORADIOBUTTON "Soft drink", ID_SOFTDRINK,
+                        121, 107, 79, 10
+        AUTORADIOBUTTON "Juice", ID_JUICE, 121, 91, 79, 10
+        AUTORADIOBUTTON "Water", ID_WATER, 121, 75, 79, 10
+        GROUPBOX        "Side orders", ID_SIDEORDERS,
+                        11, 26, 196, 41, NOT WS_GROUP
+        AUTOCHECKBOX    "Salad", ID_SALAD, 18, 45, 63, 10,
+                        WS_GROUP
+        AUTOCHECKBOX    "French fries", ID_FRIES,
+                        90, 45, 63, 10, WS_GROUP
+        LTEXT           "Other", ID_REQUESTPROMPT,
+                        21, 32, 40, 8, NOT WS_GROUP
+        ENTRYFIELD      "", ID_REQUEST, 64, 32, 135, 8,
+                        ES_MARGIN | WS_GROUP
+        DEFPUSHBUTTON   "OK", ID_OK, 5, 5, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel", ID_CANCEL, 49, 5, 40, 14,
+                        BS_SYSCOMMAND | NOT WS_TABSTOP
+        PUSHBUTTON      "Help", ID_HELP, 93, 5, 40, 14,
+                        BS_HELP | NOT WS_TABSTOP
+    END
+END
+

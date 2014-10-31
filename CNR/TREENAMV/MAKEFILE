@@ -1,0 +1,21 @@
+## Container Control - Tree Name View                 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : treenamv.exe 
+
+treenamv.exe : treenamv.obj treenamv.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) treenamv.obj
+   rc .\$*.res .\$*.exe
+
+treenamv.cpp  : treenamv.h
+treenamv.rc   : treenamv.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

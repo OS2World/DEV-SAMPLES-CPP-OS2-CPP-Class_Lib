@@ -1,0 +1,57 @@
+/************************************************************
+/ Container Control - Help in the Container
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define  INCL_PM
+#define  INCL_WININPUT
+#define  INCL_HELP
+#include <os2.h>
+#include "devview.h"
+
+
+/*--------------------------------------------------------------*\
+ *  Help table definition
+\*--------------------------------------------------------------*/
+HELPTABLE   HELP_TABLE
+BEGIN
+    HELPITEM    ID_DETAILS_FRAME,     SUBTABLE_DETAILS,  HELPFOR_DETAILS
+    HELPITEM    ID_SETTINGS_FRAME,    SUBTABLE_SETTINGS, HELPFOR_SETTINGS
+END
+
+
+/*--------------------------------------------------------------*\
+ *  Developer Details Help subtable.
+\*--------------------------------------------------------------*/
+HELPSUBTABLE SUBTABLE_DETAILS
+SUBITEMSIZE     2
+BEGIN
+    HELPSUBITEM     ID_DETAILS_CNR,   HELPFOR_DETAILS
+    HELPSUBITEM     ID_DETAILS_OPEN,  HELPFOR_OPEN
+END
+
+HELPSUBTABLE SUBTABLE_SETTINGS
+SUBITEMSIZE     2
+BEGIN
+    HELPSUBITEM     ID_NAME_EDIT,     HELPFOR_NAME
+    HELPSUBITEM     ID_ADDRESS_EDIT,  HELPFOR_ADDRESS
+    HELPSUBITEM     ID_AGE_EDIT,      HELPFOR_AGE
+    HELPSUBITEM     ID_UNDO_PAGE1,    HELPFOR_UNDO
+    HELPSUBITEM     ID_UNDO_PAGE2,    HELPFOR_UNDO
+    HELPSUBITEM     ID_HELP_PAGE1,    HELPFOR_ADDRESS_SETTINGS
+    HELPSUBITEM     ID_HELP_PAGE2,    HELPFOR_PERSONAL_SETTINGS
+    HELPSUBITEM     ID_DEFAULT_PAGE1, HELPFOR_DEFAULT
+    HELPSUBITEM     ID_DEFAULT_PAGE2, HELPFOR_DEFAULT
+END
+
+/*--------------------------------------------------------------*\
+ *  Developer Details Help subtable.
+\*--------------------------------------------------------------*/
+STRINGTABLE PRELOAD
+BEGIN
+  HELP_LIBRARIES          "HELP.HLP"
+  STR_OPEN                "~Open"
+END
+
+

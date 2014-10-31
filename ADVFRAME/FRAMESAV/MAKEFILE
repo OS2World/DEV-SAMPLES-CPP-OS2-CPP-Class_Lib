@@ -1,0 +1,18 @@
+## Advanced Frame - Frame Save Handler                
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : framesav.exe 
+
+framesav.exe : framesav.obj savhndlr.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) framesav.obj savhndlr.obj
+
+framesav.cpp  : savhndlr.hpp
+savhndlr.cpp  : savhndlr.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+

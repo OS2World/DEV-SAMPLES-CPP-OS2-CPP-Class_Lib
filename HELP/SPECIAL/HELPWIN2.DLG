@@ -1,0 +1,15 @@
+DLGINCLUDE 1 "F:\THEBOOK\SAMPLES\HELP\SPECIAL\HELPWIN2.H"
+
+DLGTEMPLATE ID_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "", ID_DIALOG, 12, 30, 250, 79, NOT FS_DLGBORDER | WS_VISIBLE
+    BEGIN
+        LTEXT           "This is a dialog page window.", -1, 8, 63, 205, 8
+        LTEXT           "Has contextual help", -1, 10, 41, 88, 8
+        LTEXT           "No contextual help", -1, 10, 19, 88, 8
+        ENTRYFIELD      "", ID_DIALOG_ENTRY1, 106, 41, 131, 8, ES_MARGIN | 
+                        WS_GROUP
+        ENTRYFIELD      "", ID_DIALOG_ENTRY2, 106, 19, 131, 8, ES_MARGIN | 
+                        WS_GROUP
+    END
+END

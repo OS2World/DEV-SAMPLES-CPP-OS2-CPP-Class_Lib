@@ -1,0 +1,14 @@
+## Thread - Executing a Thread with _System Linkage
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : system.exe 
+
+system.exe : system.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) system.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

@@ -1,0 +1,31 @@
+## Container Control - Container Help                 
+
+.SUFFIXES:
+
+.SUFFIXES: .cpp .rc .ipf
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL :  help.hlp help.exe
+
+help.exe : help.res help.obj devmodel.obj devview.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) help.obj devmodel.obj devview.obj
+   rc .\$*.res .\$*.exe
+
+developr.hlp : help.ipf devview.h
+help.rc      : devview.h
+help.cpp     : devview.hpp
+devview.cpp  : devview.hpp devview.h devmodel.hpp
+devmodel.cpp : devmodel.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
+
+{.}.ipf.hlp:
+   icc /Pc- /Pe+ /Tp .\$*.ipf 
+   ipfc .\$*.i

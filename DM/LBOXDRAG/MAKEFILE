@@ -1,0 +1,17 @@
+## Direct Manipulation - List Box Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : lboxdrag.exe 
+
+lboxdrag.exe : lboxdrag.obj lboxitem.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) lboxdrag.obj lboxitem.obj
+
+lboxdrag.cpp : lboxitem.hpp
+lboxitem.cpp : lboxitem.hpp operfix.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

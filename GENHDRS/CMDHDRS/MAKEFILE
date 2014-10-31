@@ -1,0 +1,21 @@
+## Reusable Handlers - Simple Command Handler         
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : cmdhdrs.exe 
+
+cmdhdrs.exe : cmdhdrs.obj cmdhdrs.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) cmdhdrs.obj
+   rc .\$*.res .\$*.exe
+
+cmdhdrs.cpp : cmdhdr1.hpp cmdhdr2.hpp
+cmdhdrs.rc  : cmdhdrs.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

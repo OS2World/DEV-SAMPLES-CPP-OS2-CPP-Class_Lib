@@ -1,0 +1,21 @@
+## Frame Window Basics - Frame From Dialog Template
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : dialog.exe 
+
+dialog.exe : dialog.obj dialog.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) dialog.obj
+   rc .\$*.res .\$*.exe
+
+dialog.cpp  : dialog.h
+dialog.rc   : dialog.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

@@ -1,0 +1,14 @@
+## Problem Determination - Simple Trace Example 
+
+
+CFLAGS = -dIC_DEVELOP /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft- 
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : trace.exe 
+
+trace.exe : trace.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) trace.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

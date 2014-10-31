@@ -1,0 +1,23 @@
+## Container Control - Spreadsheet Behavior                 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : spreadsh.exe 
+
+spreadsh.exe : spreadsh.res spreadsh.obj table.obj sprdhdr.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) spreadsh.obj table.obj sprdhdr.obj
+   rc .\$*.res .\$*.exe
+
+table.cpp      : table.hpp
+spreadhdr.cpp  : spreadhdr.hpp
+spreadsh.cpp   : table.hpp sprdhdr.hpp
+spreadsh.rc    : spreadsh.h                 
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

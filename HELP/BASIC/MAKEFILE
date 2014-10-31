@@ -1,0 +1,39 @@
+## Using Help - Basic Help                            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+CIPF=icc /Pc- /Pe+ /Tp
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : basic.exe helpwin.hlp tutorial.inf 
+
+basic.exe : helpwin.obj childhlp.obj tutorhdr.obj helpwin.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) helpwin.obj childhlp.obj tutorhdr.obj 
+   rc helpwin.res .\$*.exe
+
+helpwin.cpp  : helpwin.hpp helpwin.h childhlp.hpp \
+               hkeyshdr.hpp tutorhdr.hpp hcmdhdr.hpp
+childhlp.cpp : childhlp.hpp
+tutorhdr.cpp : helpwin.h tutorhdr.hpp
+helpwin.rc   : helpwin.h
+
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
+
+helpwin.hlp : helpwin.i
+   ipfc helpwin.i /x
+
+helpwin.i : helpwin.ipf helpwin.h
+   $(CIPF) helpwin.ipf
+
+tutorial.inf : tutorial.i
+   ipfc tutorial.i /x /inf
+
+tutorial.i : tutorial.ipf helpwin.h
+   $(CIPF) tutorial.ipf
+

@@ -1,0 +1,25 @@
+/************************************************************
+/ Container Control - Pop Up Menu Example 
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define  INCL_PM
+#include <os2.h>
+#include "popup.h"
+
+POINTER ICON_FOLDER   .\..\..\resource\folder.ico
+
+/*****************************/
+/* menu                      */
+/*****************************/
+MENU POPUP_MENU
+BEGIN
+  SUBMENU  "~Edit",    EDIT_SUBMENU, MIS_TEXT
+    BEGIN
+        MENUITEM "~Copy",   COPY_OBJECT
+        MENUITEM "Cu~t",    CUT_OBJECT
+        MENUITEM "~Paste",  PASTE_OBJECT
+    END
+END
+

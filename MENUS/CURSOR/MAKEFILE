@@ -1,0 +1,21 @@
+## Menus - Using a Menu Cursor                        
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : cursor.exe 
+
+cursor.exe : cursor.obj cursor.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) cursor.obj
+   rc .\$*.res .\$*.exe
+
+cursor.cpp : cursor.h
+cursor.rc  : cursor.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

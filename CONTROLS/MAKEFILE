@@ -1,0 +1,22 @@
+## Controls - Constructor and color sample.
+
+
+CFLAGS = /Gd+ /Ge+ /Gm+ /Tdp /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : controls.exe
+
+controls.exe : controls.obj controls.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) controls.obj
+   rc .\$*.res .\$*.exe
+
+controls.cpp  : controls.h
+controls.rc   : controls.dlg controls.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
+

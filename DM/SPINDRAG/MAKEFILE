@@ -1,0 +1,17 @@
+## Direct Manipulation - Spin Button Drag Example            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : spindrag.exe 
+
+spindrag.exe : spindrag.obj spinitem.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) spindrag.obj spinitem.obj
+
+spindrag.cpp : spinitem.hpp
+spinitem.cpp : spinitem.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

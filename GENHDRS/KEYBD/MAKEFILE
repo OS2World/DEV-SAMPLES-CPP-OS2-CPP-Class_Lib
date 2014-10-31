@@ -1,0 +1,21 @@
+## Reusable Handlers - Keyboard Handler               
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : keybd.exe 
+
+keybd.exe : keybd.obj keybd.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) keybd.obj
+   rc .\$*.res .\$*.exe
+
+keybd.cpp : hexkeybd.hpp uckeybd.hpp keybd.h
+keybd.rc  : keybd.h keybd.dlg
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

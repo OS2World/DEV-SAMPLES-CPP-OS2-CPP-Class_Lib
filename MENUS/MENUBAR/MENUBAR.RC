@@ -1,0 +1,75 @@
+/************************************************************
+/ Menus - Using an IMenuBar          
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "menubar.h"
+
+BITMAP MI_BITMAP .\..\..\resource\menures.bmp
+
+MENU MAIN_MENU
+  BEGIN 
+    SUBMENU  "~File", MI_FILE
+      BEGIN                                  
+        MENUITEM "~New...",  MI_NEW
+        MENUITEM "~Open...", MI_OPEN         
+        MENUITEM "~Save",    MI_SAVE
+        MENUITEM "Save a~s...", MI_SAVEAS
+      END   
+    SUBMENU "~Edit", MI_EDIT  
+      BEGIN
+        MENUITEM "~Undo  \t Ctrl+U",   MI_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "~Cut   \t Sh+Del",   MI_CUT
+        MENUITEM "Copy   \t Ctrl+Ins", MI_COPY
+        MENUITEM "~Paste \t Sh+Ins",   MI_PASTE
+      END
+    SUBMENU  "E~xamples", MI_EXAMPLE
+      BEGIN                        
+        MENUITEM "#1061",    MI_BITMAP, MIS_BITMAP
+        MENUITEM SEPARATOR
+        MENUITEM "~Switch",    MI_SWITCH
+        SUBMENU  "C~ascade",        MI_CASCADE
+          BEGIN
+            MENUITEM  "Choice 1",   MI_CASCADE1
+            MENUITEM  "Choice 2",   MI_CASCADE2
+            MENUITEM  "Choice 3",   MI_CASCADE3
+          END
+        MENUITEM "~Close",   SC_CLOSE,  MIS_SYSCOMMAND
+        MENUITEM "~Help",    MI_HELP,   MIS_HELP      
+      END                                             
+    SUBMENU "~Help", MI_HELP                   
+      BEGIN                                    
+        MENUITEM "~General help...",   MI_GENERAL_HELP 
+        MENUITEM "~Extended help...",  SC_HELPEXTENDED, MIS_SYSCOMMAND
+        MENUITEM "~Keys help...",      SC_HELPKEYS, MIS_SYSCOMMAND    
+        MENUITEM "Help ~index...",     SC_HELPINDEX, MIS_SYSCOMMAND   
+      END                                                             
+  END
+
+
+
+STRINGTABLE
+  BEGIN
+    MI_FILE           ,"File"
+    MI_NEW            ,"New"
+    MI_OPEN           ,"Open"
+    MI_SAVE           ,"Save"
+    MI_SAVEAS         ,"Save As"
+    MI_EDIT           ,"Edit"
+    MI_UNDO           ,"Undo"
+    MI_CUT            ,"Cut"
+    MI_COPY           ,"Copy"
+    MI_PASTE          ,"Paste"
+    MI_EXAMPLE        ,"Example"
+    MI_BITMAP         ,"Bitmap"
+    MI_HELP           ,"Help"
+    MI_GENERAL_HELP   ,"General Help"
+    MI_CASCADE1       ,"Cascade 1"
+    MI_CASCADE2       ,"Cascade 2"
+    MI_CASCADE3       ,"Cascade 3"
+    MI_SWITCH         ,"Menu Switched"
+  END
+

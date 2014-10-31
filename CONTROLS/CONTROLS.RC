@@ -1,0 +1,4 @@
+#include <os2.h>
+#include "controls.h"
+rcinclude "controls.dlg"
+

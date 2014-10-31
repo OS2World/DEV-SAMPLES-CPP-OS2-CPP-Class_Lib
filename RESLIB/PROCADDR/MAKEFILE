@@ -1,0 +1,21 @@
+## Using OS/2 Resources - Loading a Function Address  
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : procaddr.exe myeng.dll
+
+procaddr.exe : procaddr.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) procaddr.obj
+
+myeng.dll  : dummy.cpp mytext.h myeng.rc
+   icc -Ge- -Gm /Femyeng.dll dummy.cpp myeng.def
+   rc myeng.rc myeng.dll
+
+procaddr.cpp : mytext.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+

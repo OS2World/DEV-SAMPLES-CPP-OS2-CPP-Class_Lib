@@ -1,0 +1,18 @@
+## Container Control - Tree Text View
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : prtque.exe 
+
+prtque.exe : prtque.obj querdr.obj trbrowse.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) prtque.obj querdr.obj trbrowse.obj
+
+prtque.cpp   : trbrowse.hpp
+querdr.cpp   : querdr.hpp trbrowse.h
+trbrowse.cpp : trbrowse.hpp trbrowse.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

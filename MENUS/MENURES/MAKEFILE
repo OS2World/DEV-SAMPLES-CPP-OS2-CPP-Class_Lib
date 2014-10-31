@@ -1,0 +1,21 @@
+## Menus  - Defining a Menu Resource                  
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : menures.exe 
+
+menures.exe : menures.obj menures.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) menures.obj
+   rc .\$*.res .\$*.exe
+
+menures.cpp : menures.h
+menures.rc  : menures.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

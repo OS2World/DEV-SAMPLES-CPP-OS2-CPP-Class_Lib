@@ -1,0 +1,14 @@
+## Data Types - Using the IString Conversion Functions
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : convert.exe 
+
+convert.exe : convert.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) convert.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

@@ -1,0 +1,14 @@
+## Data Types - Using IString::isLike
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : igrep.exe 
+
+igrep.exe : igrep.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) igrep.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

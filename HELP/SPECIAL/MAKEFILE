@@ -1,0 +1,30 @@
+## Using Help - Topic Help Sample 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+CIPF=icc /Pc- /Pe+ /Tp
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : special.exe helpwin2.hlp
+
+special.exe : helpwin2.obj childhlp.obj helpwin2.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS)  helpwin2.obj childhlp.obj
+   rc helpwin2.res .\$*.exe
+
+helpwin2.cpp : helpwin2.hpp helpwin2.h childhlp.hpp
+childhlp.cpp : childhlp.hpp
+helpwin2.rc  : helpwin2.h helpwin2.dlg
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
+
+
+helpwin2.hlp : helpwin2.i
+   ipfc helpwin2.i /x
+
+helpwin2.i : helpwin2.ipf helpwin2.h
+   $(CIPF) helpwin2.ipf

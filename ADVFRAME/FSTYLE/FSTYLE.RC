@@ -1,0 +1,41 @@
+/************************************************************
+/ Advanced Frame Window - Frame Style Test
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <icconst.h>
+#include <os2.h>
+
+ICON IC_DEFAULT_FRAME_ID .\..\..\resource\cpp.ico
+
+MENU IC_DEFAULT_FRAME_ID
+  BEGIN
+    SUBMENU "File", 100
+      BEGIN
+        MENUITEM "File 101", 101
+        MENUITEM "File 102", 102
+        MENUITEM "File 103", 103
+      END
+    SUBMENU "Edit", 200
+      BEGIN
+        MENUITEM "Edit 201", 201
+        MENUITEM "Edit 202", 202
+        MENUITEM "Edit 203", 203
+      END
+    SUBMENU "View", 300
+      BEGIN
+        MENUITEM "View 301", 301
+        MENUITEM "View 302", 302
+        MENUITEM "View 303", 303
+      END
+  END
+
+ACCELTABLE IC_DEFAULT_FRAME_ID
+  BEGIN
+    "f", 101
+    "e", 202
+    "v", 303
+    "x", 999
+  END
+

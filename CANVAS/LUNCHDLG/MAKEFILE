@@ -1,0 +1,21 @@
+## Lunch dialog - Dialog template implementation.              
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : lunch.res lunchdlg.exe 
+
+lunchdlg.exe : lunchdlg.obj lunch.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) lunchdlg.obj
+   rc lunch.res .\$*.exe
+
+lunch.rc:     lunch.h lunch.dlg
+lunchdlg.cpp: lunch.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

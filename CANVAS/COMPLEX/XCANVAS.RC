@@ -1,0 +1,14 @@
+/************************************************************
+/ Canvas - Complex Canvas Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "xcanvas.h"
+
+//==================== Bit maps and icons =====================
+BITMAP  ID_FLAMINGO_BMP  .\..\..\resource\flamingo.bmp
+BITMAP  ID_BUTTERFL_BMP  .\..\..\resource\butterfl.bmp
+BITMAP  ID_OS2_BMP       .\..\..\resource\os2logo.bmp
+ICON    ID_SCREEN_ICON   screen.ico
+

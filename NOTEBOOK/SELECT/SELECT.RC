@@ -1,0 +1,14 @@
+/************************************************************
+/ Notebook Control - Delayed Page Loading                     
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define  INCL_PM
+#define  INCL_WININPUT
+#define  INCL_HELP
+#include <os2.h>
+#include "select.h"
+
+rcinclude  "select.dlg"
+

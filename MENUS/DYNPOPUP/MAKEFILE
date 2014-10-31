@@ -1,0 +1,21 @@
+## Menus  - Creating Pop-up Menus Dynamically
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : dynpopup.exe 
+
+dynpopup.exe : dynpopup.obj dynpopup.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) dynpopup.obj
+   rc .\$*.res .\$*.exe
+
+dynpopup.cpp : dynpopup.h
+dynpopup.rc  : dynpopup.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

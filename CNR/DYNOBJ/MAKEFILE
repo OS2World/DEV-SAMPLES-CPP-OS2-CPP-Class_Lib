@@ -1,0 +1,17 @@
+## Container Control - Dynamic Creation Of Objects
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : dynobj.exe 
+
+dynobj.exe : dynobj.obj table.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) dynobj.obj table.obj
+
+dynobj.cpp  : table.hpp
+table.cpp   : table.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

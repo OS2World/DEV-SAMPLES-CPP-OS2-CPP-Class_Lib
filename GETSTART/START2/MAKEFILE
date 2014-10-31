@@ -1,0 +1,25 @@
+## Getting Started - Simple Example: Version 2
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : start2.exe 
+
+start2.exe : start2.obj start2w.obj start2ch.obj start2.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) \
+        start2.obj start2w.obj start2ch.obj
+   rc .\$*.res .\$*.exe
+
+start2.cpp   : start2w.hpp
+start2ch.cpp : start2ch.hpp start2w.hpp start2.h
+start2w.cpp  : start2w.hpp start2.h
+start2.rc    : start2.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
+

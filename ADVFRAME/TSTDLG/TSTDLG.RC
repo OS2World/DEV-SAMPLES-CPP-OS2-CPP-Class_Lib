@@ -1,0 +1,20 @@
+/************************************************************
+/ Advanced Frame - Dialog Window Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include <icconst.h>
+
+#define FLAGS FCF_TASKLIST | FCF_TITLEBAR | FCF_SYSMENU
+
+DLGTEMPLATE IC_DEFAULT_FRAME_ID 
+  BEGIN
+  DIALOG "DialogWindow Test",
+         IC_DEFAULT_FRAME_ID, 0, 0, 100, 100, , FLAGS
+    BEGIN
+    CTEXT "?", 1, 25, 25, 50, 50
+    END
+  END
+

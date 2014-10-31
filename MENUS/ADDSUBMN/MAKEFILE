@@ -1,0 +1,21 @@
+## Menus - Loading a Resource Submenu                 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : addsubmn.exe 
+
+addsubmn.exe : addsubmn.obj addsubmn.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) addsubmn.obj
+   rc .\$*.res .\$*.exe
+
+addsubmn.cpp : addsubmn.h
+addsubmn.rc  : addsubmn.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

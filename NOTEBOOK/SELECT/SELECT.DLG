@@ -1,0 +1,49 @@
+/************************************************************
+/ Notebook Control - Notebook Select Handler                 
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+DLGINCLUDE 1 "select.h"
+
+DLGTEMPLATE ID_DIALOG1 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog1", ID_DIALOG1, 12, 15, 180, 90, NOT FS_DLGBORDER
+    BEGIN
+        LTEXT           "Name: ", 101, 11, 58, 45, 11
+        LTEXT           "Address", 102, 11, 36, 46, 11
+        ENTRYFIELD      "", 105, 67, 60, 98, 8, ES_MARGIN
+        ENTRYFIELD      "", 106, 67, 37, 98, 7, ES_MARGIN
+        DEFPUSHBUTTON   "Help", 1029, 12, 7, 40, 14, BS_HELP
+        PUSHBUTTON      "Undo", 1030, 55, 7, 40, 14
+        PUSHBUTTON      "Default", 1031, 98, 7, 40, 14
+    END
+END
+
+DLGTEMPLATE ID_DIALOG2 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog2", ID_DIALOG2, 12, 15, 223, 137, NOT FS_DLGBORDER
+    BEGIN
+        LTEXT           "Phone ", 103, 10, 54, 45, 12
+        ENTRYFIELD      "", 107, 66, 56, 98, 8, ES_MARGIN
+        DEFPUSHBUTTON   "Help", 1029, 12, 7, 40, 14, BS_HELP
+        PUSHBUTTON      "Undo", 1030, 55, 7, 40, 14
+        PUSHBUTTON      "Default", 1031, 98, 7, 40, 14
+    END
+END
+
+DLGTEMPLATE ID_DIALOG3 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Dialog3", ID_DIALOG3, 12, 15, 223, 137, NOT FS_DLGBORDER
+    BEGIN
+        LTEXT           "Components", 103, 10, 54, 45, 12
+        LTEXT           "Age", 104, 10, 31, 44, 10
+        ENTRYFIELD      "", 108, 74, 35, 98, 6, ES_MARGIN
+        DEFPUSHBUTTON   "Help", 1029, 12, 7, 40, 14, BS_HELP
+        PUSHBUTTON      "Undo", 1030, 55, 7, 40, 14
+        PUSHBUTTON      "Default", 1031, 98, 7, 40, 14
+        CONTROL         "", 1004, 73, 33, 105, 34, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+    END
+END

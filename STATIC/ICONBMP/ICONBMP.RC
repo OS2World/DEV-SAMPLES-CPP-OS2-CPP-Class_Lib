@@ -1,0 +1,12 @@
+/************************************************************
+/ Text Controls - Canvas - Icon and Bitmap Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include "iconbmp.h"
+
+//==================== Icons and Bitmaps ======================
+ICON    ID_CPPICON     .\..\..\resource\cpp.ico
+BITMAP  ID_CPPBITMAP   .\..\..\resource\cpp.bmp
+

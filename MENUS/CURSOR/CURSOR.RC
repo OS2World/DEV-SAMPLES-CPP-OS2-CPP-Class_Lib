@@ -1,0 +1,64 @@
+/************************************************************
+/ Menus - Using a Menu Cursor     
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "cursor.h"
+
+BITMAP MI_BITMAP .\..\..\resource\menures.bmp
+
+MENU MAIN_MENU
+  BEGIN
+    SUBMENU "~File", MI_FILE                 
+      BEGIN                                  
+        MENUITEM "~New...",  MI_NEW
+        MENUITEM "~Open...", MI_OPEN         
+        MENUITEM "~Save",    MI_SAVE
+        MENUITEM "Save ~as...", MI_SAVEAS
+      END   
+    SUBMENU "~Edit", MI_EDIT  
+      BEGIN
+        MENUITEM "~Undo  \t Ctrl+U",   MI_UNDO
+        MENUITEM "",                   MI_SEPARATOR, MIS_SEPARATOR
+        MENUITEM "~Cut   \t Sh+Del",   MI_CUT
+        MENUITEM "Copy   \t Ctrl+Ins", MI_COPY
+        MENUITEM "~Paste \t Sh+Ins",   MI_PASTE
+      END
+    SUBMENU "E~xamples", MI_EXAMPLE
+      BEGIN                        
+        MENUITEM "#1061",    MI_BITMAP, MIS_BITMAP
+        MENUITEM "",                   MI_SEPARATOR, MIS_SEPARATOR
+        MENUITEM "~Close",   SC_CLOSE,  MIS_SYSCOMMAND
+        MENUITEM "~Help",    MI_HELP,   MIS_HELP      
+      END                                             
+    SUBMENU "~Help", MI_HELP                   
+      BEGIN                                    
+        MENUITEM "~General help...",   MI_GENERAL_HELP 
+        MENUITEM "~Extended help...",  SC_HELPEXTENDED, MIS_SYSCOMMAND
+        MENUITEM "~Keys help...",      SC_HELPKEYS, MIS_SYSCOMMAND    
+        MENUITEM "Help ~index...",     SC_HELPINDEX, MIS_SYSCOMMAND   
+      END                                                             
+  END
+
+
+STRINGTABLE
+  BEGIN
+    MI_FILE           ,"File"
+    MI_NEW            ,"~New..."
+    MI_OPEN           ,"~Open..."
+    MI_SAVE           ,"~Save"
+    MI_SAVEAS         ,"Save ~as..."
+    MI_EDIT           ,"~Edit"
+    MI_UNDO           ,"~Undo  \t Ctrl+U"
+    MI_CUT            ,"~Cut   \t Sh+Del"
+    MI_COPY           ,"Copy   \t Ctrl+Ins"
+    MI_PASTE          ,"~Paste \t Sh+Ins"
+    MI_EXAMPLE        ,"E~xample"
+    MI_BITMAP         ,"Bitmap"
+    MI_HELP           ,"~Help"
+    MI_GENERAL_HELP   ,"General Help"
+    SC_CLOSE          ,"~Close"
+  END
+

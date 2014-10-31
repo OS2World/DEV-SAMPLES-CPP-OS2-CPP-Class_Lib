@@ -1,0 +1,33 @@
+template < class Arg, class Result >
+class AnyFunction : public IThreadFn {
+public:
+  AnyFunction ( const Arg &fnArg,
+                Result (*fnToRun)(Arg),
+                const IWindowHandle &window )
+    : arg( fnArg ),
+      fn( fnToRun ),
+      win( window )
+    {
+    }
+virtual void
+  run ( )
+    {
+    Result
+      result = fn( arg );
+    win.sendEvent( WM_USER, (void*)(&result) );
+    }
+private:
+const Arg
+ &arg;
+Result (*fn)(Arg);
+IWindowHandle
+  win;
+};
+
+
+
+
+
+  calculatePi( new AnyFunction<unsigned long, IString>
+                     ( 100, pi, handle ) );
+

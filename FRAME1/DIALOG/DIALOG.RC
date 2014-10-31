@@ -1,0 +1,21 @@
+/************************************************************
+/ Frame Window Basics - Frame Window From a Dialog Template
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "dialog.h"
+DLGTEMPLATE DIALOG_ID
+  BEGIN
+    DIALOG "Dialog Title", DIALOG_ID, 10, 10, 100, 100
+      BEGIN
+        CTEXT "Hello, World!", 0, 5, 30, 90, 48
+        DEFPUSHBUTTON "Ok", ID_OK, 5, 5, 40, 20
+        PUSHBUTTON "Cancel", ID_CANCEL, 55, 5, 40, 20,
+                        BS_SYSCOMMAND | NOT WS_TABSTOP
+      END
+  END
+
+
+

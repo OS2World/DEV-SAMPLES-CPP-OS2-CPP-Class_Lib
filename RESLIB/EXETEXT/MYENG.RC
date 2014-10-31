@@ -1,0 +1,15 @@
+/************************************************************
+/ Using OS/2 Resources - Resources in the EXE
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "mytext.h"
+
+STRINGTABLE PRELOAD
+BEGIN
+ MY_TEXT,     "Using resources is easy"
+END
+
+

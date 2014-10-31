@@ -1,0 +1,21 @@
+## Canvas - IViewPort that Scrolls a Bitmap.          
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ 
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL :  vportbmp.exe 
+
+vportbmp.exe : vportbmp.obj  vportbmp.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) vportbmp.obj
+   rc vportbmp.res .\$*.exe
+
+vportbmp.cpp: vportbmp.hpp vportbmp.h
+vportbmp.rc:  vportbmp.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

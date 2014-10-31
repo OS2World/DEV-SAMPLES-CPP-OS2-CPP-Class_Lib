@@ -1,0 +1,23 @@
+## Container Control - Dates and Times as IDate/ITime        
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : uidate.exe 
+
+uidate.exe : uidate.res uidate.obj developr.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) uidate.obj developr.obj
+   rc .\$*.res .\$*.exe
+
+uidate.cpp    : developr.hpp
+developr.cpp  : developr.h developr.hpp
+uidate.rc     : developr.h
+
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

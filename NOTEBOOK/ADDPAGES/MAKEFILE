@@ -1,0 +1,21 @@
+## Notebook Control - Adding Dialog Pages                      
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : addpages.exe 
+
+addpages.exe : addpages.obj addpages.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) addpages.obj
+   rc .\$*.res .\$*.exe
+
+addpages.cpp  : addpages.h
+addpages.rc   : addpages.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

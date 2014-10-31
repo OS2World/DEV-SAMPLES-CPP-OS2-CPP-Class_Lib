@@ -1,0 +1,21 @@
+## Container Control - Pop Up Menu Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : popup.exe 
+
+popup.exe : popup.res popup.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) popup.obj
+   rc .\$*.res .\$*.exe
+
+popup.cpp  : popup.h
+popup.rc   : popup.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

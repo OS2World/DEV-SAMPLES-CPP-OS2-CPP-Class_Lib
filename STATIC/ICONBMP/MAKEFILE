@@ -1,0 +1,21 @@
+## Text Controls - Canvas - Icon and Bitmap Example   
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : iconbmp.exe 
+
+iconbmp.exe : iconbmp.obj iconbmp.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) iconbmp.obj
+   rc .\$*.res .\$*.exe
+
+iconbmp.cpp : iconbmp.h
+iconbmp.rc  : iconbmp.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

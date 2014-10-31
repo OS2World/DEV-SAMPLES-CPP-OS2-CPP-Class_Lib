@@ -1,0 +1,20 @@
+#include <os2.h>
+#include <icconst.h>
+
+ICON IC_DEFAULT_FRAME_ID .\..\..\resource\cpp.ico 
+
+STRINGTABLE PRELOAD
+{
+  IC_DEFAULT_FRAME_ID,  "Minimize/Maximize Example"
+}
+
+DLGTEMPLATE IC_DEFAULT_FRAME_ID LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Minimize/Maximize Example", IC_DEFAULT_FRAME_ID, 8, 5, 200, 200, ,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON | FCF_SIZEBORDER | FCF_TASKLIST | FCF_ICON 
+    BEGIN
+        LTEXT           "Just another red box",
+                        1, 0,   0, 190, 170, NOT WS_GROUP
+         PRESPARAMS PP_BACKGROUNDCOLOR,      RGB_RED  
+    END
+END

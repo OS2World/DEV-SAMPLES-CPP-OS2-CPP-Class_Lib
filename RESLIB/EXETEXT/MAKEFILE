@@ -1,0 +1,19 @@
+## Using OS/2 Resources - Resources in the EXE        
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : exetext.exe 
+
+exetext.exe : exetext.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) exetext.obj
+   rc myeng.rc exetext.exe  
+
+exetext.cpp : mytext.h
+myeng.rc    : mytext.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+

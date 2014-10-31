@@ -1,0 +1,14 @@
+## Packaging an Performance Tuning - Modified Hello1
+
+
+CFLAGS = /Ti /Gh /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : hello1.exe 
+
+hello1.exe : hello1.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) hello1.obj dde4xtra.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

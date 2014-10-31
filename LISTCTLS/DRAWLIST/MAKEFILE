@@ -1,0 +1,17 @@
+## List Controls - List Box Custom Drawing            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : drawlist.exe 
+
+drawlist.exe : drawlist.obj  listdhdr.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) drawlist.obj listdhdr.obj
+
+drawlist.cpp: listdhdr.hpp listitem.hpp
+listdhdr.cpp: listdhdr.hpp listitem.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

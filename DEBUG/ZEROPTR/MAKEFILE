@@ -1,0 +1,14 @@
+## Problem Determination - Using a Zero Pointer 
+
+
+CFLAGS = -Ti /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : zeroptr.exe 
+
+zeroptr.exe : zeroptr.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) zeroptr.obj
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

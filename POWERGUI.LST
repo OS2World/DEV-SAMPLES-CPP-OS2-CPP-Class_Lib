@@ -1,0 +1,108 @@
+ProgramFlag programNumber chapterNumber exampleLocation exampleName
+1-3         4-6           8-14          16-37           39-200
+   #   Chapter Sample Location        Sample Name     
+   --- ------- ---------------------- -----------------------------------------------
+ x  1    1     getstart\start1        Simple Example - Version 1
+ x  2    1     getstart\start2        Simple Example - Version 2
+ x  3    3     latour\shopping        Shopping List        
+ x  4    5     frame1\dialog          Frame Window From Dialog Template
+ x  5    5     frame1\modal           Modal Frame Window        
+ x  6    5     frame1\minmax          Minimize/Maximize Handler       
+ x  7    5     frame1\ok2close        Confirm Frame Window Closing            
+ x  8    5     frame1\dstrycls        Defer Destroy On Closing Frame Window        
+ x  9    5     frame1\frmextns        Frame Extension Sampler                 
+ x 10    6     menus\menures          Defining A Menu Resource
+ x 11    6     menus\menubar          Using an IMenuBar         
+ x 12    6     menus\txtpopup         Pop Up Menu Sample        
+ x 13    6     menus\accel            Accelerator Table Loading 
+ x 14    6     menus\dynpopup         Dynamically Created Pop Up Menus
+ x 15    6     menus\sysmenu          Accessing the System Menu        
+ x 16    6     menus\titlebmp         Title Bar Bitmaps                
+ x 17    6     menus\addsubmn         Loading a Resource Submenus     
+ x 18    6     menus\cursor           Using a Menu Cursor              
+ x 19    6     menus\dynsubmn         Dynamic Submenus                 
+ x 20    6     menus\drawmenu         Drawing Menu Items               
+ x 21    7     controls               Control Constructor and Color Example
+ x 22    8     static\textstyl        Static Text Style Sample
+ x 23    8     static\textclr         Static Text Color Example         
+ x 24    8     static\textcv          Static Text and Canvas Example 
+ x 25    8     static\iconbmp         Icon and Bitmap Example       
+ x 26    8     static\boxes           Group Box and Outline Box Example
+ x 27   10     buttons\pushbut        Push Button Example
+ x 28   10     buttons\titlebut       Title Bar Bitmap Example
+ x 29   10     buttons\radio          Radio Button Select Handler Example     
+ x 30   11     listctls\drawlist      List Box Custom Drawing Example
+ x 31   11     listctls\spinbut       Spin Button Date Control Example
+ x 32   12     slider\progind         Progress Indicator Custom Drawing Example
+ x 33   12     slider\slider          Slider Example
+ x 34   13     cnr\treetxtv           Container Tree Text View (fig)
+ x 35   13     cnr\treeicov           Container Tree Text View (fig)
+ x 36   13     cnr\treenamv           Container Tree Name View (fig)
+ x 37   13     cnr\textview           Container Text View with Multiple Lines (fig)
+ x 38   13     cnr\cdate              Dates and Times using CDATE/CTIME
+ x 39   13     cnr\uidate             Dates and Times using IDate/ITime
+ x 40   13     cnr\help               Using Help in the Container       
+ x 41   13     cnr\edithdr            Container MLE Edit Handler
+ x 42   13     cnr\popup              Container Popup Menus
+ x 43   13     cnr\dynobj             Dynamic Creation of Objects
+ x 44   13     cnr\minicnr            Using Mini-Icons in the Container
+ x 45   13     cnr\spreadsh           SpreadSheet Behavior in the Details View
+ x 46   13     cnr\treedet            Combining the Tree and Details View     
+ x 47   14     notebook\simple        Simple Client Notebook
+ x 48   14     notebook\default       Default Notebook (pic)
+ x 49   14     notebook\addpages      Adding Notebook Pages
+ x 50   14     notebook\vportdlg      Using a View Port on a Notebook Page
+ x 51   14     notebook\select        Delayed Addition of Pages
+ x 52   15     canvas\lunchdlg        Using Dialogs in a Canvas (fig)
+ x 53   15     canvas\cvsimple        Simple ICanvas Example      
+ x 54   15     canvas\cvtab           Nested Canvas Tabbing Example      
+ x 55   15     canvas\setlunch        Lunch Dialog using a Set Canvas    
+ x 56   15     canvas\setdecks        Decks in a Set Canvas              
+ x 57   15     canvas\setpack         Deck Packing and Alignment in a Set Canvas       
+ x 58   15     canvas\mcsimple        Simple Multi-Cell Canvas     
+ x 59   15     canvas\mclunch         Lunch Dialog using a Multi-Cell Canvas
+ x 60   15     canvas\splittxt        Simple Split-Canvas Example
+ x 61   15     canvas\splitprb        Split Canvas with Problem Windows
+ x 62   15     canvas\vportbmp        View Port for Scrolling a Bitmap 
+ x 63   15     canvas\vportlog        View Port with Logically Sized Windows
+ x 64   15     canvas\complex         Complex Canvas Example  (bonus sample)
+ x 65   16     genhdrs\cmdhdrs        Simple Command Handler Example
+ x 66   16     genhdrs\keybd          Keyboard Handler Example
+ x 67   16     genhdrs\mouseclk       Mouse Click Handler Example
+ x 68   17     advframe\fstyle        Frame Window Style Example
+ x 69   17     advframe\drawextn      Derived Frame Extension Example
+ x 70   17     advframe\framesav      Frame Window Position Save Handler Example
+ x 71   17     advframe\tstdlg        Dialog Window Example
+ x 72   17     advframe\profile       Profile Viewer Example
+ x 73   18     extlib\valueset        Creating a Value Set Class
+ x 74   19     thread\simple          Simple Multi-threaded Example
+ x 75   19     thread\system          Starting Threads with _System Linkage
+ x 76   19     thread\optlink         Starting Threads with _OptLink Linkage
+ x 77   20     dm\menudrag            Menu Drag Example
+ x 78   20     dm\spindrag            Spin Button Drag Example
+ x 79   20     dm\lboxdrag            List Box Drag Example                 
+ x 80   22     help\basic             Basic Help Example
+ x 81   22     help\special           Extended Help Example
+ x 82   23     reslib\dlltext         Building a Resource DLL
+ x 83   23     reslib\exetext         Using Resource in the EXE
+ x 84   23     reslib\stattxt         Switching Resources Dynamically
+ x 85   23     reslib\procaddr        Using IProcedureAddress         
+ x 86   24     profile\viewprof       Profile Dumper Application          
+ x 87   25     data\cipher            Using an IString as a Buffer
+ x 88   25     data\igrep             Using IString::isLike
+ x 89   25     data\strngtst          Using IStringTest     
+ x 90   25     data\convert           Using IString Conversion Functions
+ x 91   25     data\mybuffer          Replacing IBuffer With Your Own Class
+ x 92   25     data\str2date          Creating Dates and Times from Strings
+ x 93   26     exceptns\newexcp       Deriving a New Exception Class
+ x 94   26     exceptns\exviewer      An Exception Viewer            
+ x 95   27     debug\trace            Simple Trace Example
+ x 96   27     debug\prtque           Trace Queue Browser Program
+ x 97   27     debug\zeroptr          Debugging a Zero Pointer   
+ x 98   27     debug\excdisp          Displaying an Exception in a Message Box
+ x 99   27     debug\invisibl         Finding Why a Window is not Visible
+ x 100  27     debug\sigterm          Building a Termination Signal Handler
+ x 101  28     shipapp\hello1         Changes to Hello1 for Start-Up Tuning
+    *   28     shipapp\appstat        Using Static Object Functions instead of Static Objects
+    *   28     shipapp\genprags       A Command File to Generate alloc_text for Static Functions
+   

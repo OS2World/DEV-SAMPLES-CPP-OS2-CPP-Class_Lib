@@ -1,0 +1,46 @@
+/************************************************************
+/ Reusable Handlers - Keyboard Handler
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+DLGINCLUDE 1 "keybd.h"
+
+DLGTEMPLATE ID_KEYBD_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Keyboard Handler Example", ID_KEYBD_DIALOG,
+            20, 7, 257, 137,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT    "Uppercase and hexadecimal keyboard handlers.",
+                        -1, 4, 124, 233, 8
+        LTEXT           "Any input", -1, 8, 110, 124, 8
+        ENTRYFIELD      "", ID_ANY_ENTRY, 136, 110, 114, 8,
+                        ES_MARGIN | WS_GROUP
+        LTEXT           "Uppercase input", -1, 8, 95, 124, 8
+        ENTRYFIELD      "", ID_UPPERCASE_ENTRY, 136, 95, 114, 8,
+                        ES_MARGIN | WS_GROUP
+        LTEXT           "Hexadecimal-only", -1, 8, 80, 124, 8
+        ENTRYFIELD      "", ID_HEX_ENTRY, 136, 80, 114, 8,
+                        ES_MARGIN | WS_GROUP
+        LTEXT           "Uppercase, hexadecimal-only", -1,
+                        8, 65, 124, 8
+        ENTRYFIELD      "", ID_UPPERCASE_HEX_ENTRY,
+                        136, 65, 114, 8, ES_MARGIN | WS_GROUP
+        LTEXT           "Uppercase, hexadecimal-only", -1,
+                        8, 50, 124, 8
+        CONTROL         "", ID_UPPERCASE_HEX_COMBO,
+                        134, 25, 117, 35,
+                        WC_COMBOBOX, CBS_DROPDOWN | WS_GROUP |
+                        WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Uppercase, hexadecimal-only", -1,
+                        8, 35, 124, 8
+        MLE             "", ID_UPPERCASE_HEX_MLE,
+                        134, 4, 117, 41,
+                        MLS_WORDWRAP | MLS_HSCROLL |
+                        MLS_VSCROLL | MLS_IGNORETAB | WS_GROUP
+        DEFPUSHBUTTON   "OK", ID_CLOSE, 4, 2, 49, 14,
+                        BS_SYSCOMMAND | WS_GROUP
+    END
+END
+

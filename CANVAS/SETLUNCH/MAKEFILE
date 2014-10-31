@@ -1,0 +1,16 @@
+## Canvas - Lunch dialog using an ISetCanvas        
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : setlunch.exe 
+
+setlunch.exe : setlunch.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) setlunch.obj
+
+setlunch.cpp:  setlunch.h pushbtns.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

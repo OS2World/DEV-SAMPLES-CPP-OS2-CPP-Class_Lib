@@ -1,0 +1,13 @@
+/************************************************************
+/ Container Control - Tree Icon View                
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define  INCL_PM
+#include <os2.h>
+#include "treeicov.h"
+
+POINTER ICON_FOLDER   .\..\..\resource\folder.ico
+
+

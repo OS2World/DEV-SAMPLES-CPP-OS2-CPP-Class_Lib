@@ -1,0 +1,16 @@
+## Button Controls - Push Button Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : pushbut.exe 
+
+pushbut.exe : pushbut.obj 
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) pushbut.obj
+
+pushbut.cpp  :  pushbut.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

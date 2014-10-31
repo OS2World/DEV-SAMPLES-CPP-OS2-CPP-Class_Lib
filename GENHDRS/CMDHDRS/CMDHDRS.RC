@@ -1,0 +1,15 @@
+/************************************************************
+/ Reusable Handlers - Simple Command Handler
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "cmdhdrs.h"
+
+MENU ID_POPUP
+BEGIN
+  MENUITEM "Beep once",   ID_ONE_BEEP_CMD
+  MENUITEM "Beep twice",  ID_TWO_BEEP_CMD
+END
+

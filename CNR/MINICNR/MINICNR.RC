@@ -1,0 +1,13 @@
+/************************************************************
+/ Container Control - Mini-icon Container                    
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define  INCL_PM
+#include <os2.h>
+#include "minicnr.h"
+
+POINTER ICON_FOLDER   .\..\..\resource\folder.ico
+
+

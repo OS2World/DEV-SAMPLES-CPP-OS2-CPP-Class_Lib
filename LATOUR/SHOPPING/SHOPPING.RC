@@ -1,0 +1,16 @@
+/************************************************************
+/ Tour of the UICL - Shopping List Example Program
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#define INCL_WINFRAMEMGR
+#include <os2.h>
+#define INCL_WINSTDFILE_INCLUDED
+#include <pmstddlg.h>
+#include "shopping.h"
+
+ICON    ID_CSETPLUSPLUSICON  .\..\..\resource\cpp.ico
+
+rcinclude "file.dlg"
+

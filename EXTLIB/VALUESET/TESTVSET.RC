@@ -1,0 +1,78 @@
+/************************************************************
+/ Extending the Library - Value Set Example
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include <icconst.h>
+
+#include "testvset.h"
+
+ICON   IC_DEFAULT_FRAME_ID "testvset.ico"
+BITMAP IC_DEFAULT_FRAME_ID "testvset.bmp"
+
+STRINGTABLE
+  BEGIN
+    IC_DEFAULT_FRAME_ID "ValueSet Test"
+  END
+
+MENU IC_DEFAULT_FRAME_ID
+  BEGIN
+    SUBMENU "~Style", M_STYLE
+      BEGIN
+        MENUITEM "~Border", M_STYLE_BORDER
+        MENUITEM "~Item Border", M_STYLE_ITEMBORDER
+        MENUITEM "~Right To Left", M_STYLE_RTL, , MIA_DISABLED
+        MENUITEM "S~cale Bitmaps", M_STYLE_SCALE
+        MENUITEM "~Owner Draw", M_STYLE_OWNERDRAW
+      END
+    SUBMENU "~Dimensions", M_DIMENSIONS
+      BEGIN
+        MENUITEM "~Set", M_DIMENSIONS_SET
+        MENUITEM "~Query", M_DIMENSIONS_QUERY
+        MENUITEM SEPARATOR
+        SUBMENU "~Item Size", M_DIMENSIONS_ITEMSIZE
+          BEGIN
+            MENUITEM "~Query", M_DIMENSIONS_ITEMSIZE_QUERY
+            MENUITEM "~Set", M_DIMENSIONS_ITEMSIZE_SET
+          END
+        SUBMENU "Item S~pacing", 2M_DIMENSIONS_SPACING
+          BEGIN
+            MENUITEM "~Query", M_DIMENSIONS_SPACING_QUERY
+            MENUITEM "~Set", M_DIMENSIONS_SPACING_SET
+          END
+        MENUITEM SEPARATOR
+        SUBMENU "~Minimum Size", M_DIMENSIONS_MIN
+          BEGIN
+            MENUITEM "~Query", M_DIMENSIONS_MIN_QUERY
+            MENUITEM "~Size Client", M_DIMENSIONS_MIN_SIZE
+          END
+      END
+    SUBMENU "~Items", M_ITEMS
+      BEGIN
+        MENUITEM "~Bitmap", M_ITEMS_BITMAP
+        MENUITEM "~Color", M_ITEMS_COLOR
+        MENUITEM "~Icon", M_ITEMS_ICON
+        MENUITEM "~Text", M_ITEMS_TEXT
+      END
+    SUBMENU "I~tem Style", M_ITEMSTYLE
+      BEGIN
+        MENUITEM "~Set", M_ITEMSTYLE_SET
+        MENUITEM SEPARATOR
+        MENUITEM "~Disabled", M_ITEMSTYLE_DISABLED, , MIA_NODISMISS
+        MENUITEM "D~rag Source", M_ITEMSTYLE_DRAG, , MIA_NODISMISS
+        MENUITEM "Drop ~Target", M_ITEMSTYLE_DROP, , MIA_NODISMISS
+        MENUITEM "~Owner Draw", M_ITEMSTYLE_OWNERDRAW, , MIA_NODISMISS
+        MENUITEM SEPARATOR
+        MENUITEM "Re-~Enable", M_ITEMSTYLE_ENABLE
+      END
+    SUBMENU "~Colors", M_COLORS
+      BEGIN
+        MENUITEM "~Background", M_COLORS_BACK
+        MENUITEM "B~orders", M_COLORS_BORDERS
+        MENUITEM "~Foreground", M_COLORS_FORE
+        MENUITEM "~Highlight Background", M_COLORS_HILITE
+      END
+  END
+

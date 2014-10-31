@@ -1,0 +1,28 @@
+## Advanced Frame - Profile Viewer Example     
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+OBJS = profile.obj appview.obj profview.obj profobj.obj enhprof.obj keyview.obj vprofarg.obj
+
+ALL : profile.exe 
+
+profile.exe : profile.res $(OBJS)
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) $(OBJS)
+   rc .\$*.res .\$*.exe
+
+profile.cpp  : vprofarg.hpp profview.hpp enhprof.hpp
+appview.cpp  : appview.hpp keyview.hpp profview.h
+profview.cpp : profview.hpp appview.hpp keyview.hpp enhprof.hpp profview.h
+profobj.cpp  : profobj.hpp
+enhprof.cpp  : enhprof.hpp
+vprofarg.cpp : vprofarg.hpp
+keyview.cpp  : keyview.hpp profview.hpp
+profile.rc   : profview.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

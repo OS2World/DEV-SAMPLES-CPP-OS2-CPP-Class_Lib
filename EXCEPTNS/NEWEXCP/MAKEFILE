@@ -1,0 +1,17 @@
+## Error Handling - New Exception Class 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS =  /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : newexcp.exe 
+
+newexcp.exe : newexcp.obj custexcp.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) newexcp.obj custexcp.obj
+
+custexcp.cpp : custexcp.hpp
+newexcp.cpp  : custexcp.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp

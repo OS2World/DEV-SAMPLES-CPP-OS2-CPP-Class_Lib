@@ -1,0 +1,26 @@
+## Container Control - Combined Tree and Details View
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : treedet.exe 
+
+treedet.exe : partlist.res treedet.obj treedetc.obj treedeth.obj partlist.obj partobj.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) treedet.obj treedetc.obj treedeth.obj partlist.obj partobj.obj
+   rc partlist.res .\$*.exe
+
+partlist.rc  : partlist.h
+treedet.cpp  : partlist.hpp
+treedetc.cpp : treedetc.hpp
+treedeth.cpp : treedetc.hpp treedeth.hpp
+partlist.cpp : partlist.hpp partlist.h partobj.hpp treedetc.hpp treedeth.hpp
+partobj.cpp  : partobj.hpp
+
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

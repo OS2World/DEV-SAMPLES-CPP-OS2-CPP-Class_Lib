@@ -1,0 +1,18 @@
+/************************************************************
+/ Container - Combined Tree and Details View
+/
+/ Copyright (C) 1994, Law, Leong, Love, Olson, Tsuji.
+/ All Rights Reserved.
+************************************************************/
+#include <os2.h>
+#include "partlist.h"
+
+STRINGTABLE
+  BEGIN
+    EX_PARTLIST_FRAME,   "Parts List"
+    EX_COLUMN_TRACEABLE, "Traceable"
+    EX_COLUMN_ENABLED,   "Enabled"
+    EX_COLUMN_GENTRACE,  "Generate Trace"
+    EX_COLUMN_TRIGGER,   "Has Trigger"
+  END
+

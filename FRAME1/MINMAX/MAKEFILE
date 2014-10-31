@@ -1,0 +1,22 @@
+## Frame Window Basics - Minimize/Maximize Handler 
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : minmax.exe 
+
+minmax.exe : minmax.obj minmaxh.obj chdhider.obj minmax.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) minmax.obj minmaxh.obj chdhider.obj
+   rc .\$*.res .\$*.exe
+
+minmax.cpp    : chdhider.hpp
+minmaxh.cpp   : minmaxh.hpp
+chdhider.cpp  : chdhider.hpp minmaxh.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

@@ -1,0 +1,21 @@
+## Button Controls - Title Bar Bitmap Example
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : titlebut.exe 
+
+titlebut.exe : titlebut.obj titlebut.res
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) titlebut.obj
+   rc .\$*.res .\$*.exe
+
+titlebut.cpp : titlebut.h
+titlebut.rc  : titlebut.h
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc

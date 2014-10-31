@@ -1,0 +1,21 @@
+## Direct Manipulation - Menu Drag Example            
+
+
+CFLAGS = /Tdp /Gd+ /Ge+ /Gm+ /Wall+ext-gnr-got-por-ppt-uni-vft-
+LFLAGS = /PM:PM /NOI
+LIBS = dde4muii.lib dde4cci.lib
+
+ALL : menudrag.exe 
+
+menudrag.exe : menudrag.res menudrag.obj cmditem.obj
+   icc $(CFLAGS) /B"$(LFLAGS)" /Fe.\$*.exe $(LIBS) menudrag.obj cmditem.obj
+   rc .\$*.res .\$*.exe
+
+menudrag.cpp : cmditem.hpp
+cmditem.cpp  : cmditem.hpp
+
+{.}.cpp.obj:
+   icc $(CFLAGS) /C+ .\$*.cpp
+
+{.}.rc.res:
+   rc -r .\$*.rc
